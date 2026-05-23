@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shintyadhita Wirawan Putri — IT Business Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+<style>
+  /* ── RESET & ROOT ───────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:        #0D2340;
+    --blue:        #1A4A8A;
+    --blue-mid:    #2563C4;
+    --sky:         #4A90D9;
+    --sky-light:   #E8F2FB;
+    --teal:        #1A7A6E;
+    --teal-light:  #E3F4F1;
+    --amber:       #C47A1A;
+    --amber-light: #FDF3E3;
+    --cream:       #F9F7F3;
+    --warm-gray:   #F2EFE9;
+    --text:        #1A1A1A;
+    --text-mid:    #4A4A4A;
+    --text-muted:  #7A7A7A;
+    --border:      #E2DDD6;
+    --white:       #FFFFFF;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── LAYOUT WRAP ───────────────────────────────────────── */
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 40px; }
+
+  /* ── NAV ───────────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: rgba(249,247,243,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--navy);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--blue-mid); }
+
+  /* ── HERO / COVER ──────────────────────────────────────── */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 60px;
+  }
+
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(37,99,196,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(26,74,138,0.4) 0%, transparent 60%);
+  }
+
+  .hero-graphic {
+    position: absolute;
+    right: 64px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    padding: 80px 64px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .hero-eyebrow-dot {
+    width: 6px; height: 6px;
+    background: var(--sky);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(44px, 7vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 0;
+    flex: 1.2;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0;
+  }
+
+  .hero-right {
+  flex: 0.8;
+  max-width: 520px;
+  padding-top: 12px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-top:30px;
+    margin-bottom: 20px;
+  }
+
+  .hero-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 56px;
+  }
+
+  .role-pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-item { display: flex; flex-direction: column; }
+
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 6px;
+    max-width: 160px;
+    line-height: 1.4;
+  }
+
+  /* ── HERO CTAs ──────────────────────────────────────────── */
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 12px 26px;
+    background: #ffffff;
+    color: #1A4A8A;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--sky); }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 12px 26px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.8);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+  /* ── SECTION COMMON ────────────────────────────────────── */
+  .section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 560px;
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  /* ── ABOUT ─────────────────────────────────────────────── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 8px;
+  }
+
+  .about-photo-wrap {
+    position: relative;
+  }
+
+  .about-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--sky-light);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px dashed var(--border);
+    border-radius: 16px;
+  }
+
+  .about-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: var(--navy);
+    color: white;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.4;
+    box-shadow: 0 8px 24px rgba(13,35,64,0.25);
+  }
+
+  .about-badge strong { font-size: 22px; display: block; margin-bottom: 2px; }
+
+  .about-text p {
+    color: var(--text-mid);
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .about-text p strong { color: var(--text); font-weight: 500; }
+
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .highlight-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--blue-mid);
+  }
+
+  .highlight-item .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .highlight-item .value {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+
+  /* ── SKILLS / COMPETENCIES ─────────────────────────────── */
+  .competencies-bg { background: var(--navy); }
+  .competencies-bg .section-title { color: white; }
+  .competencies-bg .section-subtitle { color: rgba(255,255,255,0.5); }
+  .competencies-bg .section-label { color: var(--sky); }
+
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .comp-card {
+    background: rgba(255,255,255,0.04);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+
+  .comp-card:hover { background: rgba(255,255,255,0.08); }
+
+  .comp-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .comp-icon.blue  { background: rgba(37,99,196,0.3); }
+  .comp-icon.teal  { background: rgba(26,122,110,0.3); }
+  .comp-icon.amber { background: rgba(196,122,26,0.3); }
+
+  .comp-icon svg {
+    width: 18px; height: 18px;
+    stroke: rgba(255,255,255,0.8);
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .comp-card h3 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: white;
+  }
+
+  .comp-role-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .comp-role-tag.ba { background: rgba(37,99,196,0.25); color: #7EB3F5; }
+  .comp-role-tag.sa { background: rgba(26,122,110,0.25); color: #6ECFBF; }
+  .comp-role-tag.pm { background: rgba(196,122,26,0.25); color: #F5CC7E; }
+
+  .comp-skills {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .comp-skills li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .comp-skills li::before {
+    content: '';
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .comp-card-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .comp-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .comp-skill-tag {
+    font-size: 11px;
+    font-weight: 500;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.75);
+    padding: 3px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .project-detail-value {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 4px;
+  }
+
+  .tools-row {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .tools-row-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+
+  .tool-chip-dark {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ── EXPERIENCE TIMELINE ───────────────────────────────── */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    margin-top: 4px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--blue-mid), var(--border));
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -38px;
+    top: 10px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--blue-mid);
+    background: var(--cream);
+  }
+
+  .timeline-dot.current {
+    background: var(--blue-mid);
+    box-shadow: 0 0 0 4px rgba(37,99,196,0.15);
+  }
+
+  .timeline-period {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 6px;
+  }
+
+  .timeline-company {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .timeline-role-line {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .exp-role-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+
+  .exp-role-tag.fulltime { background: var(--sky-light); color: var(--blue); border: 1px solid rgba(37,99,196,0.2); }
+  .exp-role-tag.internship { background: var(--teal-light); color: var(--teal); border: 1px solid rgba(26,122,110,0.2); }
+  .exp-role-tag.leadership { background: var(--amber-light); color: var(--amber); border: 1px solid rgba(196,122,26,0.2); }
+
+  .timeline-impact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .impact-stat {
+    background: var(--sky-light);
+    border: 1px solid rgba(37,99,196,0.15);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    color: var(--blue);
+  }
+
+  .impact-stat strong {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    color: var(--navy);
+    margin-bottom: 1px;
+  }
+
+  .exp-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .exp-points li {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.65;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .exp-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px; height: 1px;
+    background: var(--blue-mid);
+  }
+
+  /* ── PROJECTS ──────────────────────────────────────────── */
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  .project-header {
+    padding: 36px 40px 28px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .project-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+    border: 0.4px solid #0D2340;
+    color: #0D2340; 
+    display: inline-block;
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .project-scope {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .project-role-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+
+  .role-badge {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .role-badge.ba { background: var(--sky-light); color: var(--blue); border: 1px solid rgba(37,99,196,0.2); }
+  .role-badge.sa { background: var(--teal-light); color: var(--teal); border: 1px solid rgba(26,122,110,0.2); }
+  .role-badge.pm { background: var(--amber-light); color: var(--amber); border: 1px solid rgba(196,122,26,0.2); }
+
+  .project-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-col { padding: 32px 40px; }
+
+  .project-col + .project-col { border-left: 1px solid var(--border); }
+
+  .project-col-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .project-desc {
+    font-size: 14px;
+    color: var(--text-mid);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .project-skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .project-skill-chip {
+    background: var(--warm-gray);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+
+  .contrib-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contrib-list li {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  .contrib-icon {
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-weight: 600;
+  }
+
+  .contrib-icon.ba { background: var(--sky-light); color: var(--blue); }
+  .contrib-icon.sa { background: var(--teal-light); color: var(--teal); }
+  .contrib-icon.pm { background: var(--amber-light); color: var(--amber); }
+
+
+  /* ── TOOLS ─────────────────────────────────────────────── */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .tool-item {
+    padding: 16px;
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .tool-item:hover {
+    border-color: var(--sky);
+    box-shadow: 0 2px 12px rgba(74,144,217,0.12);
+  }
+
+  .tool-name {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .tool-category {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  /* ── CONTACT / CLOSING ─────────────────────────────────── */
+  .closing {
+    background: var(--navy);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .closing .section-label { color: var(--sky); margin-bottom: 16px; }
+  .closing .section-title { color: white; margin-bottom: 16px; }
+
+  .closing-body {
+    color: rgba(255,255,255,0.5);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: white;
+  }
+
+  .closing-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .contact-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: left;
+  }
+
+  .contact-detail-item { display: flex; flex-direction: column; gap: 3px; }
+
+  .contact-detail-label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .contact-detail-value {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-detail-value:hover { color: var(--sky); }
+
+  /* ── FOOTER ────────────────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { gap: 1.25rem; }
+    .hero-inner { padding: 60px 24px; }
+    .hero-graphic { display: none; }
+    .hero-content {
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .hero-headline {
+      margin-bottom: 0;
+    }
+
+    .hero-sub {
+      max-width: 520px;
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+
+    .hero-right {
+    max-width: 520px;
+    padding-top: 0;
+  }
+    .hero-ctas {
+    gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 32px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 12px 22px;
+  }
+
+    .wrap { padding: 0 24px; }
+    .section { padding: 60px 0; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-photo-wrap {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  .about-badge {
+    right: -8px;
+    bottom: -12px;
+    font-size: 11px;
+    padding: 10px 12px;
+  }
+
+  .about-badge strong {
+    font-size: 18px;
+  }
+
+    .comp-grid { grid-template-columns: 1fr; gap: 2px; }
+
+    .timeline { padding-left: 24px; }
+    .timeline-dot { left: -30px; }
+
+    .project-header { grid-template-columns: 1fr; }
+    .project-role-badges { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+    .project-body { grid-template-columns: 1fr; }
+    .project-col + .project-col { border-left: none; border-top: 1px solid var(--border); }
+
+    .project-tag {
+    font-size: 9px;
+  }
+
+    .about-highlights { grid-template-columns: 1fr; }
+
+    .hero-stats { gap: 24px; }
+
+    footer { flex-direction: column; gap: 6px; text-align: center; padding: 20px 24px; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-headline { font-size: 2.5rem; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .contact-detail-grid { grid-template-columns: 1fr 1fr; }
+    nav .nav-links { display: none; }
+      .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+    .about-photo-wrap {
+    max-width: 150px;
+  }
+
+  .about-badge {
+    right: -10px;
+    bottom: -10px;
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+
+  .about-badge strong {
+    font-size: 16px;
+  }
+
+      .project-tag {
+    font-size: 7px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Shintyadhita Putri</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <svg class="hero-graphic" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="210" cy="210" r="200" stroke="white" stroke-width="0.5"/>
+    <circle cx="210" cy="210" r="140" stroke="white" stroke-width="0.5"/>
+    <circle cx="210" cy="210" r="80"  stroke="white" stroke-width="0.5"/>
+    <line x1="10"  y1="210" x2="410" y2="210" stroke="white" stroke-width="0.5"/>
+    <line x1="210" y1="10"  x2="210" y2="410" stroke="white" stroke-width="0.5"/>
+    <line x1="68"  y1="68"  x2="352" y2="352" stroke="white" stroke-width="0.5"/>
+    <line x1="352" y1="68"  x2="68"  y2="352" stroke="white" stroke-width="0.5"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      Portfolio
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-headline">
+        How I Turning Business<br/>Needs into<br/><em>Working Systems</em>
+      </h1>
+
+      <div class="hero-right">
+        <p class="hero-sub">
+          I bridge the gap between what the business needs and what the system actually delivers through structured requirements, clear documentation, and end-to-end project coordination.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#projects" class="btn-primary" style="background-color: #ffffff; color: #1A4A8A;">
+            View Case Studies
+          </a>
+          <a href="#contact" class="btn-outline">Let's Connect</a>
+        </div>
+      </div>
+    </div>
+    
+      <div class="hero-stats">
+      </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-label">About</div>
+    <h2 class="section-title">Hello, <br>I'm Shintyadhita Putri</h2>
+
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <div class="about-photo-placeholder">
+            <img src="img/portfolio_photo.jpg" alt="Portfolio photo" class="about-photo" />
+          </div>
+          <div class="about-badge">
+            <strong>3.94</strong>
+            GPA · Informatics<br>UPN Veteran Jatim
+          </div>
+        </div>
+
+      <div class="about-text">
+        <p>
+          an <strong>IT Business Analyst</strong> based in Indonesia, with a background shaped by both <strong>technical practice and academic research</strong>.
+        </p>
+
+        <p>
+          I started from an Informatics background, completed <strong>Bangkit Academy’s Mobile Development program</strong>, led a team that won <strong>3rd place in a web programming competition</strong>, and contributed to <strong>four academic publications in machine learning and image processing</strong>. These experiences help me understand systems beyond the surface: how they are built, how data moves, and how solutions should be tested before reaching users.
+        </p>
+
+        <p>
+          In my current role, I work across <strong>requirement gathering, workflow design, BRD &amp; FSD documentation, API &amp; data mapping, UAT coordination, SQL-based validation, and go-live support</strong>. I often sit between <strong>business users, developers, and project stakeholders</strong> to make requirements clear, testable, and aligned with real operational needs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SKILLS / CORE COMPETENCIES -->
+<section class="section competencies-bg" id="skills">
+  <div class="wrap">
+    <div class="section-label">Core Competencies</div>
+    <h2 class="section-title">What I Bring to the Table</h2>
+
+    <div class="comp-grid">
+
+      <div class="comp-card">
+        <div class="comp-icon blue">
+          <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="M9 12h6M9 16h4"/></svg>
+        </div>
+        <h3>Requirements &amp; Documentation</h3>
+        <p class="comp-card-desc">Gathering and structuring user needs into formal documents that can be understood by both users and developers.</p>
+        <div class="comp-skill-tags">
+          <span class="comp-skill-tag">Figma</span>
+          <span class="comp-skill-tag">BRD</span>
+          <span class="comp-skill-tag">FSD</span>
+          <span class="comp-skill-tag">Requirement Gathering</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-icon teal">
+          <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Business Process Design</h3>
+        <p class="comp-card-desc">Translating operational workflows into structured system flows, ensuring the process can be translated clearly into system behavior.</p>
+        <div class="comp-skill-tags">
+          <span class="comp-skill-tag">BPMN 2.0</span>
+          <span class="comp-skill-tag">draw.io</span>
+          <span class="comp-skill-tag">Workflow Design</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-icon amber">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+        </div>
+        <h3>System Implementation &amp; UAT</h3>
+        <p class="comp-card-desc">Supporting system delivery from requirements to go-live, including test scenarios, UAT coordination, issue tracking, and user feedback follow-up.</p>
+        <div class="comp-skill-tags">
+          <span class="comp-skill-tag">UAT</span>
+          <span class="comp-skill-tag">Test Case Design</span>
+          <span class="comp-skill-tag">Go-live Support</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-icon blue">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Data Analysis &amp; Dashboard</h3>
+        <p class="comp-card-desc">Turning raw operational data into structured insights that support decision-making and performance monitoring.</p>
+        <div class="comp-skill-tags">
+          <span class="comp-skill-tag">SQL</span>
+          <span class="comp-skill-tag">Excel</span>
+          <span class="comp-skill-tag">Looker Studio</span>
+          <span class="comp-skill-tag">Google Colab</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-icon teal">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Stakeholder Management</h3>
+        <p class="comp-card-desc">Acting as the liaison between business users, developers, and external vendors to clarify needs, align expectations, and keep delivery moving.</p>
+        <div class="comp-skill-tags">
+          <span class="comp-skill-tag">Cross-functional Coordination</span>
+          <span class="comp-skill-tag">ClickUp</span>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-icon amber">
+          <svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+        </div>
+        <h3>Integration &amp; API Mapping</h3>
+        <p class="comp-card-desc">Defining data flows, trigger logic, and synchronization rules across integrated systems to ensure consistent and accurate data movement.</p>
+        <div class="comp-skill-tags">
+          <span class="comp-skill-tag">API Mapping</span>
+          <span class="comp-skill-tag">Data Validation</span>
+          <span class="comp-skill-tag">SQL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-label">Work Experience</div>
+    <h2 class="section-title">Where I Turned Learning into Practice</h2>
+
+    <div class="timeline">
+
+      <!-- PT Mitra Cakra Digital -->
+      <div class="timeline-item">
+        <div class="timeline-dot current"></div>
+        <div class="timeline-period">Sep 2025 – Present</div>
+        <div class="timeline-company">PT Mitra Cakra Digital</div>
+        <div class="timeline-role-line">IT Business Analyst · Bogor, Indonesia</div>
+        <span class="exp-role-tag fulltime">Full-time</span>
+        <div class="timeline-impact">
+          <div class="impact-stat">
+            <strong>3</strong>
+            System go-lives
+          </div>
+          <div class="impact-stat">
+            <strong>3 domains</strong>
+            Legal · Finance · HR
+          </div>
+        </div>
+        <ul class="exp-points">
+          <li>Contributed to end-to-end delivery of 3 system go-lives: law firm operations app, finance integration, vendor analytics, and HCMS.</li>
+          <li>Produced Business Requirement Documents (BRD) and Functional Specification Documents (FSD), and visualized workflows using BPMN 2.0 notation.</li>
+          <li>Defined API mappings, data flow diagrams, and trigger logic to ensure accurate cross-module data synchronization.</li>
+          <li>Coordinated UAT sessions by preparing test scenarios, managing stakeholder feedback, and ensuring closure before go-live.</li>
+          <li>Managed project tracking and timelines using ClickUp, acting as liaison between business stakeholders, developers, and external vendors.</li>
+          <li>Configured HCMS system setup using Frappe HR and collaborated with developers on custom UI development.</li>
+        </ul>
+      </div>
+
+      <!-- Samator Group -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Dec 2024 – Aug 2025</div>
+        <div class="timeline-company">Samator Group</div>
+        <div class="timeline-role-line">Business Intelligence Intern · Surabaya, Indonesia</div>
+        <span class="exp-role-tag internship">Internship</span>
+        <div class="timeline-impact">
+          <div class="impact-stat">
+            <strong>890+</strong>
+            Test cases executed
+          </div>
+        </div>
+        <ul class="exp-points">
+          <li>Proposed adoption of a third-party ticketing vendor to streamline internal support communication, including vendor research and internal recommendation documentation.</li>
+          <li>Analyzed ERP and asset management workflows to identify process gaps and support improvement initiatives across departments.</li>
+          <li>Executed testing across 890+ scenarios for ERP workflows and enterprise asset management platforms prior to system launch.</li>
+          <li>Optimized SQL queries used in business dashboards, improving data accuracy and load performance.</li>
+        </ul>
+      </div>
+
+      <!-- PT United Tractors -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Feb – Jun 2024</div>
+        <div class="timeline-company">PT United Tractors Tbk</div>
+        <div class="timeline-role-line">IT &amp; Data Science Developer Intern · Jakarta, Indonesia</div>
+        <span class="exp-role-tag internship">Internship</span>
+        <div class="timeline-impact">
+          <div class="impact-stat">
+            <strong>1,500+</strong>
+            Records/month tracked
+          </div>
+        </div>
+        <ul class="exp-points">
+          <li>Built Excel-based monthly dashboards tracking 1,500+ IT support ticket records per month, covering agent performance, SLA compliance, issue categories, and root causes.</li>
+          <li>Authored step-by-step technical documentation for the Service Division to resolve ERP-related ticket issues.</li>
+          <li>Designed a Figma interface for the Corporate Strategy &amp; Technology Helpdesk Team to improve operational efficiency and user experience.</li>
+        </ul>
+      </div>
+
+      <!-- Yayasan Generasi Maju Berkarya -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">Jul 2023 – May 2024</div>
+        <div class="timeline-company">Yayasan Generasi Maju Berkarya</div>
+        <div class="timeline-role-line">Leaders Surabaya · Surabaya, Indonesia</div>
+        <span class="exp-role-tag leadership">Leadership</span>
+        <ul class="exp-points">
+          <li>Secured 20+ external partners to support program initiatives, handling external stakeholder engagement end-to-end.</li>
+          <li>Led organization of monthly technology-focused events, achieving an average satisfaction rate of 97%.</li>
+          <li>Awarded Best Chapter for excellence in leadership, event organization, and community impact.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECTS / CASE STUDIES -->
+<section class="section" id="projects" style="background: var(--warm-gray);">
+  <div class="wrap">
+    <div class="section-label">Case Studies</div>
+    <h2 class="section-title">How I Work Through Real Projects</h2>
+
+
+        <!-- Project 1: Law Firm Daily Operations App -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <span class="project-tag mcd-law">IT Business Analyst · PT Mitra Cakra Digital</span>
+          <h3 class="project-title">Law Firm Daily Operations App</h3>
+          <p class="project-scope">System implementation project supporting daily operational processes for law firm users.</p>
+        </div>
+        <div class="project-role-badges">
+          <span class="role-badge ba">BA</span>
+          <span class="role-badge sa">SA</span>
+          <span class="role-badge pm">PM</span>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-col">
+          <div class="project-col-title">Overview &amp; Contribution</div>
+          <p class="project-desc">
+            Worked closely with business users and developers to clarify changing requirements, translate operational needs into functional specifications, and ensure the system behavior aligned with how users worked day to day. I also supported UAT coordination, issue follow-up, and go-live preparation.
+          </p>
+          <div class="project-skill-chips">
+            <span class="project-skill-chip">Requirement Clarification</span>
+            <span class="project-skill-chip">Workflow Validation</span>
+            <span class="project-skill-chip">UAT Coordination</span>
+            <span class="project-skill-chip">Go-live Support</span>
+          </div>
+        </div>
+
+        <div class="project-col">
+          <div class="project-col-title">Key Deliverables</div>
+          <ul class="contrib-list">
+            <li><span class="contrib-icon ba">—</span><span>Requirement clarification and validation</span></li>
+            <li><span class="contrib-icon sa">—</span><span>Workflow and system behavior alignment</span></li>
+            <li><span class="contrib-icon ba">—</span><span>UAT coordination and issue follow-up</span></li>
+            <li><span class="contrib-icon pm">—</span><span>Go-live preparation and user support</span></li>
+          </ul>
+
+          <div class="project-col-title" style="margin-top: 20px;">Skills Demonstrated</div>
+          <p class="project-detail-value">Business analysis, requirement clarification, system behavior validation, stakeholder coordination, UAT management</p>
+        </div>
+      </div>
+    </div>
+    <!-- Project 2: Finance Integration & Vendor Analytics -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <span class="project-tag mcd-finance">IT Business Analyst · PT Mitra Cakra Digital</span>
+          <h3 class="project-title">Finance Integration &amp; Vendor Analytics</h3>
+          <p class="project-scope">System integration project connecting finance modules and vendor performance tracking.</p>
+        </div>
+        <div class="project-role-badges">
+          <span class="role-badge ba">BA</span>
+          <span class="role-badge sa">SA</span>
+          <span class="role-badge pm">PM</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-col">
+          <div class="project-col-title">Overview &amp; Contribution</div>
+          <p class="project-desc">
+            Defined how the integration should work, including how data flows between systems, what triggers synchronization, and how discrepancies should be validated. I produced the FSD and tracked the project timeline from design to deployment.
+          </p>
+          <div class="project-skill-chips">
+            <span class="project-skill-chip">FSD</span>
+            <span class="project-skill-chip">API Mapping</span>
+            <span class="project-skill-chip">Data Synchronization Logic</span>
+            <span class="project-skill-chip">SQL Validation</span>
+            <span class="project-skill-chip">Project Timeline Management</span>
+          </div>
+        </div>
+        <div class="project-col">
+          <div class="project-col-title">Key Deliverables</div>
+          <ul class="contrib-list">
+            <li><span class="contrib-icon ba">—</span><span>Functional Specification Document (FSD)</span></li>
+            <li><span class="contrib-icon sa">—</span><span>API mapping &amp; data flow documentation</span></li>
+            <li><span class="contrib-icon sa">—</span><span>Data synchronization logic design</span></li>
+            <li><span class="contrib-icon sa">—</span><span>SQL-based data validation queries</span></li>
+            <li><span class="contrib-icon pm">—</span><span>Project timeline in ClickUp</span></li>
+          </ul>
+          <div class="project-col-title" style="margin-top: 20px;">Skills Demonstrated</div>
+          <p class="project-detail-value">Business analysis, integration design, cross-system coordination, technical documentation, UAT management</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: HCMS -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <span class="project-tag mcd-hcms">IT Business Analyst · PT Mitra Cakra Digital</span>
+          <h3 class="project-title">Human Capital Management System (HCMS)</h3>
+          <p class="project-scope">End-to-end implementation of an HCMS using Frappe HR to digitalize human capital processes.</p>
+        </div>
+        <div class="project-role-badges">
+          <span class="role-badge ba">BA</span>
+          <span class="role-badge sa">SA</span>
+          <span class="role-badge pm">PM</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-col">
+          <div class="project-col-title">Overview &amp; Contribution</div>
+          <p class="project-desc">
+Handled the process from requirement gathering and BRD/FSD preparation to Frappe HR configuration, payroll rule definition, custom UI coordination with developers, and UAT before go-live. This work required me to understand both HR processes, payroll calculation logic, and Frappe HR configuration.          <div class="project-skill-chips">
+          <div class="project-skill-chips">
+            <span class="project-skill-chip">BRD</span>
+            <span class="project-skill-chip">FSD</span>
+            <span class="project-skill-chip">Frappe HR</span>
+            <span class="project-skill-chip">Payroll Logic</span>
+            <span class="project-skill-chip">UAT Coordination</span>
+            <span class="project-skill-chip">System Configuration</span>
+          </div>
+          </div>
+        </div>
+        <div class="project-col">
+          <div class="project-col-title">Key Deliverables</div>
+          <ul class="contrib-list">
+            <li><span class="contrib-icon ba">—</span><span>Business Requirement Document (BRD)</span></li>
+            <li><span class="contrib-icon ba">—</span><span>Functional Specification Document (FSD)</span></li>
+            <li><span class="contrib-icon ba">—</span><span>Payroll calculation rule documentation</span></li>
+            <li><span class="contrib-icon ba">—</span><span>UAT test scenarios &amp; issue logs</span></li>
+            <li><span class="contrib-icon sa">—</span><span>System configuration in Frappe HR</span></li>
+            <li><span class="contrib-icon pm">—</span><span>Project timeline management</span></li>
+          </ul>
+          <div class="project-col-title" style="margin-top: 20px;">Skills Demonstrated</div>
+          <p class="project-detail-value">Business analysis, HRIS process understanding, payroll calculation logic, system configuration, stakeholder coordination, UAT management</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4: ERP Testing Samator -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <span class="project-tag samator">Business Intelligence Intern · Samator Group</span>
+          <h3 class="project-title">ERP &amp; Asset Management System Testing</h3>
+          <p class="project-scope">Pre-launch system validation for ERP workflows and enterprise asset management platform at Samator Group.</p>
+        </div>
+        <div class="project-role-badges">
+          <span class="role-badge sa">SA</span>
+          <span class="role-badge ba">BA</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-col">
+          <div class="project-col-title">Overview &amp; Contribution</div>
+          <p class="project-desc">
+            Executed 890+ test scenarios to validate ERP and asset management workflows before launch. I also analyzed existing workflows, identified process gaps, and proposed the adoption of a third-party ticketing vendor.
+          </p>
+          <div class="project-skill-chips">
+            <span class="project-skill-chip">System Testing</span>
+            <span class="project-skill-chip">ERP Analysis</span>
+            <span class="project-skill-chip">SQL Optimization</span>
+            <span class="project-skill-chip">Process Improvement</span>
+          </div>
+        </div>
+        <div class="project-col">
+          <div class="project-col-title">Key Deliverables</div>
+          <ul class="contrib-list">
+            <li><span class="contrib-icon sa">—</span><span>890+ test cases executed across ERP workflows</span></li>
+            <li><span class="contrib-icon sa">—</span><span>SQL query optimization for dashboards</span></li>
+            <li><span class="contrib-icon ba">—</span><span>Vendor research &amp; recommendation document</span></li>
+            <li><span class="contrib-icon ba">—</span><span>Workflow analysis documentation</span></li>
+          </ul>
+          <div class="project-col-title" style="margin-top: 20px;">Skills Demonstrated</div>
+          <p class="project-detail-value">QA &amp; testing, ERP analysis, SQL, process analysis, business communication</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5: Monthly Dashboard UT -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <span class="project-tag ut">IT &amp; Data Science Developer Intern · PT United Tractors Tbk</span>
+          <h3 class="project-title">Performance Monthly Dashboard</h3>
+          <p class="project-scope">Operational dashboard to monitor and evaluate monthly performance for the Service Division.</p>
+        </div>
+        <div class="project-role-badges">
+          <span class="role-badge ba">BA</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-col">
+          <div class="project-col-title">Overview &amp; Contribution</div>
+          <p class="project-desc">
+            Designed and built an Excel-based monthly dashboard that visualized 1,500+ ticket records per month. The dashboard covered agent performance, SLA compliance, issue categories, and root cause analysis, helping the Service Division monitor recurring operational performance more clearly.
+          </p>
+          <div class="project-skill-chips">
+            <span class="project-skill-chip">Excel Dashboard</span>
+            <span class="project-skill-chip">Data Visualization</span>
+            <span class="project-skill-chip">Operational Reporting</span>
+            <span class="project-skill-chip">Technical Documentation</span>
+          </div>
+        </div>
+        <div class="project-col">
+          <div class="project-col-title">Key Deliverables</div>
+          <ul class="contrib-list">
+            <li><span class="contrib-icon ba">—</span><span>Monthly Excel dashboard</span></li>
+            <li><span class="contrib-icon ba">—</span><span>SLA &amp; agent performance tracking</span></li>
+            <li><span class="contrib-icon ba">—</span><span>Issue category &amp; root cause breakdown</span></li>
+            <li><span class="contrib-icon sa">—</span><span>ERP ticket resolution documentation</span></li>
+          </ul>
+          <div class="project-col-title" style="margin-top: 20px;">Skills Demonstrated</div>
+          <p class="project-detail-value">Data analysis, dashboard design, operational reporting, performance monitoring, root cause analysis, and technical documentation</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOOLS & TECHNOLOGIES -->
+<section class="section tools-section" id="tools">
+  <div class="wrap">
+    <div class="section-label">Tools &amp; Technologies</div>
+    <h2 class="section-title">What I Use to Support My Work</h2>
+
+    <div class="tools-grid">
+<div class="tool-item">
+  <span class="tool-name">draw.io (BPMN 2.0)</span>
+  <span class="tool-category">Business Analysis</span>
+</div>
+<div class="tool-item">
+  <span class="tool-name">Figma</span>
+  <span class="tool-category">UI Design Support</span>
+</div>
+<div class="tool-item">
+  <span class="tool-name">ClickUp</span>
+  <span class="tool-category">Project Management</span>
+</div>
+<div class="tool-item">
+  <span class="tool-name">Microsoft Office</span>
+  <span class="tool-category">Documentation &amp; Reporting</span>
+</div>
+<div class="tool-item">
+  <span class="tool-name">SQL</span>
+  <span class="tool-category">Data Analysis</span>
+</div>
+<div class="tool-item">
+  <span class="tool-name">Microsoft Excel</span>
+  <span class="tool-category">Data Analysis</span>
+</div>
+<div class="tool-item">
+  <span class="tool-name">Looker Studio</span>
+  <span class="tool-category">Data Visualization</span>
+</div>
+<div class="tool-item">
+  <span class="tool-name">Google Colab</span>
+  <span class="tool-category">Data Analysis &amp; ML Experimentation</span>
+</div>
+<div class="tool-item">
+  <span class="tool-name">Streamlit</span>
+  <span class="tool-category">Data App Development</span>
+</div>
+
+<div class="tool-item">
+  <span class="tool-name">Python</span>
+  <span class="tool-category">Programming</span>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<div class="closing" id="contact">
+  <div class="wrap">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">How We Can Connect</h2>
+
+    <div class="contact-links">
+      <a href="mailto:shintyadhita.wputri@gmail.com" class="contact-link">
+        ✉
+      </a>
+      <a href="https://www.linkedin.com/in/shintyadhita" target="_blank" class="contact-link">
+        in
+      </a>
+      <a href="https://wa.me/6285287888999" class="contact-link">
+        ✆
+      </a>
+    </div>
+
+    <p class="closing-note">Available for onsite, hybrid, and remote roles</p>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Shintyadhita Putri</p>
+  <p>Indonesia</p>
+</footer>
+
+</body>
+</html>
